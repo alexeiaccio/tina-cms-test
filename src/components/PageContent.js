@@ -18,7 +18,7 @@ export default function PageContent() {
     fields: [
       {
         label: 'Title',
-        name: 'title',
+        name: 'rawJson.title',
         description: 'Enter title',
         component: 'text',
       },
