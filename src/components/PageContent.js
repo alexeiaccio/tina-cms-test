@@ -7,6 +7,7 @@ export default function PageContent() {
     query TitleQuery {
       dataJson(fileRelativePath: { regex: "/index/g" }) {
         title
+        description
         id
         fileRelativePath
         rawJson
@@ -14,20 +15,24 @@ export default function PageContent() {
     }
   `);
   const [data] = useLocalJsonForm(dataJson, {
-    label: 'Edit Title',
+    label: 'Main page',
     fields: [
       {
         label: 'Title',
         name: 'rawJson.title',
-        description: 'Enter title',
         component: 'text',
+      },
+      {
+        label: 'Description',
+        name: 'rawJson.description',
+        component: 'html',
       },
     ],
   });
-  console.log({ data });
   return (
     <div>
       <h1>{data.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: data.description }} />
     </div>
   );
 }
