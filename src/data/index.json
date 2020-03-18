@@ -1,5 +1,6 @@
 {
   "title": "Super Title!",
+  "description": "<p>Some very <strong>nice</strong> description</p>",
   "__gatsby_resolved": {
     "fileRelativePath": "/src/data/index.json"
   }
